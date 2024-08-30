@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* لون خلفية أزرق فاتح */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 32px;
+}
+
+.content {
+    text-align: left;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 900px;
+}
+
+.image-text-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.image-text-container img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.image-text-container p {
+    font-size: 18px;
+    flex-grow: 1;
+    align-self: center;
+}
+
+.details {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details ul {
+    margin-top: 10px;
+}
+
+.details ul li {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.price span {
+    color: red;
+}
+
+.buy-now {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.buy-now a {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.buy-now a:hover {
+    background-color: #333;
+}
