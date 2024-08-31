@@ -41,6 +41,16 @@
         <div class="buy-now">
             <a href="https://sso.teachable.com/secure/1585575/checkout/5356837/the-ultimate-people-reading-course?affcode=1585575_ogspwntx">Buy Now</a>
         </div>
+
+        <!-- نموذج الاشتراك -->
+        <div class="subscribe">
+            <h2>Subscribe for updates</h2>
+            <form action="process.php" method="post" onsubmit="return validateForm()">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
     </div>
 
     <!-- JavaScript section -->
@@ -49,6 +59,16 @@
         window.onload = function() {
             alert("See the world in another way.");
         };
+
+        // Function to validate form before submission
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            if (email == "") {
+                alert("Please enter your email.");
+                return false;
+            }
+            return true;
+        }
     </script>
 </body>
 </html>
