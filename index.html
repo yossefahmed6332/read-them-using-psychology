@@ -3,94 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astronaut Animation</title>
+  <title>رائد فضاء</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      height: 100vh;
+      background: black;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, #000428, #004e92);
+      height: 100vh;
       overflow: hidden;
     }
 
-    .scene {
-      position: relative;
-      width: 300px;
-      height: 300px;
-    }
-
-    /* الكوكب */
-    .planet {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, #4a90e2, #003f7f);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
-    }
-
-    /* مسار دوران رائد الفضاء */
-    .orbit {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 200px;
-      height: 200px;
-      border: 1px dashed rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      animation: rotate 8s linear infinite;
-    }
-
-    /* رائد الفضاء */
     .astronaut {
+      position: relative;
+      width: 150px;
+      height: 200px;
+    }
+
+    /* Helmet */
+    .helmet {
       position: absolute;
-      top: 0;
-      left: 50%;
-      width: 40px;
-      height: 40px;
+      top: 10px;
+      left: 25px;
+      width: 100px;
+      height: 100px;
       background: white;
       border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      border: 5px solid gray;
     }
 
-    /* خوذة رائد الفضاء */
-    .astronaut::before {
-      content: '';
+    .visor {
       position: absolute;
-      top: 8px;
-      left: 8px;
-      width: 24px;
-      height: 24px;
-      background: #000;
+      top: 20px;
+      left: 15px;
+      width: 70px;
+      height: 50px;
+      background: #1a1a1a;
       border-radius: 50%;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     }
 
-    /* حركة الدوران */
-    @keyframes rotate {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
+    /* Body */
+    .body {
+      position: absolute;
+      top: 100px;
+      left: 35px;
+      width: 80px;
+      height: 100px;
+      background: white;
+      border-radius: 10px;
+      border: 5px solid gray;
+    }
+
+    /* Arms */
+    .arm-left, .arm-right {
+      position: absolute;
+      top: 110px;
+      width: 30px;
+      height: 80px;
+      background: white;
+      border-radius: 10px;
+      border: 5px solid gray;
+    }
+
+    .arm-left {
+      left: 0;
+      transform: rotate(-30deg);
+    }
+
+    .arm-right {
+      right: 0;
+      transform: rotate(30deg);
+    }
+
+    /* Legs */
+    .leg-left, .leg-right {
+      position: absolute;
+      bottom: -10px;
+      width: 30px;
+      height: 70px;
+      background: white;
+      border-radius: 10px;
+      border: 5px solid gray;
+    }
+
+    .leg-left {
+      left: 20px;
+    }
+
+    .leg-right {
+      right: 20px;
+    }
+
+    /* Backpack */
+    .backpack {
+      position: absolute;
+      top: 110px;
+      left: -10px;
+      width: 100px;
+      height: 50px;
+      background: gray;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="scene">
-    <div class="planet"></div>
-    <div class="orbit">
-      <div class="astronaut"></div>
+  <div class="astronaut">
+    <div class="helmet">
+      <div class="visor"></div>
     </div>
+    <div class="body"></div>
+    <div class="arm-left"></div>
+    <div class="arm-right"></div>
+    <div class="leg-left"></div>
+    <div class="leg-right"></div>
+    <div class="backpack"></div>
   </div>
 </body>
 </html>
