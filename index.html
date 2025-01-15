@@ -1,114 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رائد فضاء</title>
+  <title>Astronaut Floating</title>
   <style>
     body {
       margin: 0;
       background: black;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       overflow: hidden;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
     }
 
     .astronaut {
       position: relative;
-      width: 150px;
-      height: 200px;
+      animation: float 3s infinite ease-in-out;
     }
 
-    /* Helmet */
-    .helmet {
-      position: absolute;
-      top: 10px;
-      left: 25px;
+    .astronaut .helmet {
       width: 100px;
       height: 100px;
       background: white;
       border-radius: 50%;
       border: 5px solid gray;
+      position: relative;
     }
 
-    .visor {
+    .astronaut .helmet .visor {
+      width: 60px;
+      height: 40px;
+      background: black;
+      border-radius: 50%;
       position: absolute;
       top: 20px;
-      left: 15px;
-      width: 70px;
-      height: 50px;
-      background: #1a1a1a;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    }
-
-    /* Body */
-    .body {
-      position: absolute;
-      top: 100px;
-      left: 35px;
-      width: 80px;
-      height: 100px;
-      background: white;
-      border-radius: 10px;
-      border: 5px solid gray;
-    }
-
-    /* Arms */
-    .arm-left, .arm-right {
-      position: absolute;
-      top: 110px;
-      width: 30px;
-      height: 80px;
-      background: white;
-      border-radius: 10px;
-      border: 5px solid gray;
-    }
-
-    .arm-left {
-      left: 0;
-      transform: rotate(-30deg);
-    }
-
-    .arm-right {
-      right: 0;
-      transform: rotate(30deg);
-    }
-
-    /* Legs */
-    .leg-left, .leg-right {
-      position: absolute;
-      bottom: -10px;
-      width: 30px;
-      height: 70px;
-      background: white;
-      border-radius: 10px;
-      border: 5px solid gray;
-    }
-
-    .leg-left {
       left: 20px;
     }
 
-    .leg-right {
+    .astronaut .body {
+      width: 60px;
+      height: 80px;
+      background: white;
+      margin: 0 auto;
+      border-radius: 10px;
+      border: 3px solid gray;
+    }
+
+    .astronaut .arm {
+      width: 20px;
+      height: 60px;
+      background: white;
+      position: absolute;
+      top: 100px;
+      border-radius: 10px;
+      border: 3px solid gray;
+    }
+
+    .astronaut .arm.left {
+      left: -30px;
+      transform: rotate(-30deg);
+    }
+
+    .astronaut .arm.right {
+      right: -30px;
+      transform: rotate(30deg);
+    }
+
+    .astronaut .leg {
+      width: 20px;
+      height: 60px;
+      background: white;
+      position: absolute;
+      bottom: -20px;
+      border-radius: 10px;
+      border: 3px solid gray;
+    }
+
+    .astronaut .leg.left {
+      left: 20px;
+    }
+
+    .astronaut .leg.right {
       right: 20px;
     }
 
-    /* Backpack */
-    .backpack {
-      position: absolute;
-      top: 110px;
-      left: -10px;
-      width: 100px;
-      height: 50px;
-      background: gray;
-      border-radius: 10px;
-    }
-
-    /* Animation */
     @keyframes float {
       0%, 100% {
         transform: translateY(-10px);
@@ -117,89 +93,18 @@
         transform: translateY(10px);
       }
     }
-
-    .astronaut {
-      animation: float 3s infinite ease-in-out;
-    }
-
-    /* Stars */
-    .star {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle 2s infinite alternate;
-    }
-
-    @keyframes twinkle {
-      from {
-        opacity: 0.5;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .star:nth-child(1) {
-      width: 3px;
-      height: 3px;
-      top: 20%;
-      left: 10%;
-      animation-delay: 0.2s;
-    }
-
-    .star:nth-child(2) {
-      width: 2px;
-      height: 2px;
-      top: 40%;
-      left: 30%;
-      animation-delay: 0.5s;
-    }
-
-    .star:nth-child(3) {
-      width: 4px;
-      height: 4px;
-      top: 60%;
-      left: 70%;
-      animation-delay: 0.8s;
-    }
-
-    .star:nth-child(4) {
-      width: 2px;
-      height: 2px;
-      top: 80%;
-      left: 50%;
-      animation-delay: 1.1s;
-    }
-
-    .star:nth-child(5) {
-      width: 3px;
-      height: 3px;
-      top: 10%;
-      left: 80%;
-      animation-delay: 1.5s;
-    }
   </style>
 </head>
 <body>
-  <!-- Stars -->
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-
-  <!-- Astronaut -->
   <div class="astronaut">
     <div class="helmet">
       <div class="visor"></div>
     </div>
     <div class="body"></div>
-    <div class="arm-left"></div>
-    <div class="arm-right"></div>
-    <div class="leg-left"></div>
-    <div class="leg-right"></div>
-    <div class="backpack"></div>
+    <div class="arm left"></div>
+    <div class="arm right"></div>
+    <div class="leg left"></div>
+    <div class="leg right"></div>
   </div>
 </body>
 </html>
